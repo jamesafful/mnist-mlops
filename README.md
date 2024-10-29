@@ -1,5 +1,3 @@
-# mnist-mlops
-
 # MNIST MLOps Project
 
 ## Project Overview
