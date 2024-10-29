@@ -3,4 +3,8 @@ uvicorn==0.18.2
 torch==1.12.1
 torchvision==0.13.1
 pillow==9.2.0
+wandb
+scikit-learn
+numpy==1.21.6
+python-multipart  # Add this line
 

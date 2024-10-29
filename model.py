@@ -110,6 +110,8 @@ for epoch in range(config["epochs"]):
     log_predictions(model, next(iter(test_loader))[0][:10], next(iter(test_loader))[1][:10])
     
     print(f'Epoch {epoch + 1}/{config["epochs"]}, Accuracy: {accuracy:.2f}%, Precision: {precision:.2f}, Recall: {recall:.2f}')
+# After the training loop
+torch.save(model.state_dict(), "model_weights.pth")  # Save the model weights
 
 wandb.finish()  # Finish W&B session
 

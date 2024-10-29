@@ -3,10 +3,22 @@ from PIL import Image
 import torch
 import torchvision.transforms as transforms
 import io
+import wandb
+from model import LogisticRegression  # Make sure to import your model
+
+# Define hyperparameters here, before using them
+config = {
+    "learning_rate": 0.01,
+    "epochs": 10,
+    "batch_size": 64,
+}
+
+# Initialize wandb with the config
+wandb.init(project="mnist-mlops", config=config)
 
 # Load the trained model
 model = LogisticRegression(input_dim=28*28, output_dim=10)  # Ensure to match your model definition
-model.load_state_dict(torch.load("path_to_your_model_weights.pth"))  # Replace with the path to your saved model weights
+model.load_state_dict(torch.load("model_weights.pth"))  # Load the model weights
 model.eval()  # Set the model to evaluation mode
 
 # Initialize FastAPI
