@@ -24,7 +24,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t your_dockerhub_username/mnist-mlops .
+        docker build -t jamesafful/mnist-mlops .
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
@@ -34,7 +34,7 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker push your_dockerhub_username/mnist-mlops
+        docker push jamesafful/mnist-mlops
 
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.14.0
